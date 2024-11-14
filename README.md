@@ -1,22 +1,27 @@
 # Create a private fork of any public repo
 
+Clone this repo and `cd` into the cloned folder (with the `forkit.mjs` file).
+
 ## Usage
 
+>[!NOTE]
+>You will need to have [Node.js](https://nodejs.org/) installed.
+
 1. Create an empty private repo on GitHub (`private_fork`).
-2. `node forkit.mjs <public_repo_URL> <private_fork_URL> [<path_to_clone_to>]`
+2. In the terminal, run `node forkit.mjs <public_repo_URL> <private_fork_URL> [<path_to_clone_to>]`
 
 > [!NOTE]
 > If no `path_to_clone_to` is provided, the private fork will be cloned to a folder in the current directory.
 
 ## Example
 
-```bash
+```shell
 node forkit.mjs https://github.com/user/foo.git https://github.com/user/private-foo.git ../foo
 ```
 
 or simply
 
-```bash
+```shell
 node forkit.mjs user/foo user/private-foo ../foo
 ```
 
