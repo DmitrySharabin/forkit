@@ -28,8 +28,9 @@ node forkit.mjs user/foo user/private-foo ../foo
 ## Syncing with the public repo
 
 1. `cd <private_fork_folder>`
-2. `git pull upstream main`
-3. `git push origin main`
+2. `git pull upstream <branch_name>`
+3. `git push origin <branch_name>`
 
-> [!NOTE]
-> Instead of `main`, you can use the name of any branch you want to sync.
+## Pushing to the public repo (if it's also yours or you have permission to push)
+
+`git push upstream <branch_name>`
