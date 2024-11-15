@@ -22,12 +22,12 @@ let fromFolder = from.split("/").pop();
 toPath ??= to.split("/").pop().replace(".git", "");
 
 // Bare-clone the needed public repo (from) and mirror-push it to the private one (to).
-execSync(`git clone --bare ${from} && cd ${fromFolder} && git push --mirror ${to}`);
+execSync(`git clone --bare ${from} && cd ${fromFolder} && git push --mirror ${to}`, { stdio: "inherit" });
 
 // Clean up the temporary folder.
-execSync(`rm -rf ${fromFolder}`);
+execSync(`rm -rf ${fromFolder}`, { stdio: "inherit" });
 
 // Clone the private repo (to) and add the public one (from) as upstream.
-execSync(`git clone ${to} ${toPath} && cd ${toPath} && git remote add upstream ${from}`);
+execSync(`git clone ${to} ${toPath} && cd ${toPath} && git remote add upstream ${from}`, { stdio: "inherit" });
 
 console.info("Done!");
